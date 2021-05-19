@@ -27,8 +27,8 @@ def save_file(items, path):
 			for item in items:
 				writer.writerow([item['title'], item['link'], item['price_usd'], item['price_uah'], item['city']])
 	elif FORMAT_FILE == 'json':
-		with open(path, 'w') as file:
-			json.dump(items, file)
+		with open(path, 'w', encoding='utf8') as file:
+			json.dump(items, file, ensure_ascii=False)
 
 
 def get_content(html):
